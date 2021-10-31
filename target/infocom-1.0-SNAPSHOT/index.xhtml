@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+</h:head>
+<h:body>
+   <h:form id="index">
+      <h:panelGrid columns="3" cellpadding="5" style="margin: 0 auto;">
+         <p:outputLabel for="id" value="id" />
+         <p:inputText id="id" value="#{employeeController.employee.id}" />
+         <p:message for="id" />
+
+         <p:outputLabel for="fullName" value="fullName"/>
+         <p:inputText id="fullName" value="#{employeeController.employee.fullName}"/>
+         <p:message for="fullName"/>
+
+
+         <p:outputLabel for="homePhone" value="homePhone" />
+         <p:inputText id="homePhone" value="#{employeeController.employee.homePhone}"/>
+         <p:message for="homePhone" />
+
+         <p:outputLabel for="phone" value="phone" />
+         <p:inputText id="phone" value="#{employeeController.employee.phone}"/>
+         <p:message for="phone" />
+
+         <p:outputLabel for="workPhone" value="workPhone" />
+         <p:inputText id="workPhone" value="#{employeeController.employee.workPhone}"/>
+         <p:message for="workPhone" />
+
+         <p:outputLabel for="homeAddress" value="homeAddress" />
+         <p:inputText id="homeAddress" value="#{employeeController.employee.homeAddress}"/>
+         <p:message for="homeAddress" />
+
+         <p:outputLabel for="email" value="E-Mail" />
+         <p:inputText id="email" value="#{employeeController.employee.email}">
+         </p:inputText>
+         <p:message for="email" />
+
+         <p:outputLabel for="bankDetails" value="bankDetails" />
+         <p:inputText id="bankDetails" value="#{employeeController.employee.bankDetails}"/>
+         <p:message for="bankDetails" />
+
+         <p:outputLabel for="position" value="position" />
+         <p:inputText id="position" value="#{employeeController.employee.position}"/>
+         <p:message for="position" />
+
+         <p:commandButton  value="Add" action="#{employeeController.add}">
+         </p:commandButton>
+      </h:panelGrid>
+   </h:form>
+</h:body>
+</html>
