@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+   <h:head>
+   </h:head>
+
+   <h:body>
+      <h:form id="organizations">
+         <p:dataTable id="home" var="organization" value="#{organizationController.organizations}">
+            <p:column headerText="id">
+               <h:outputText  value="#{organization.id}"/>
+            </p:column>
+            <p:column headerText="typeOfOwnership">
+               <h:outputText value="#{organization.typeOfOwnership}"/>
+            </p:column>
+            <p:column headerText="legalForm">
+               <h:outputText value="#{organization.legalForm}"/>
+            </p:column>
+            <p:column headerText="nameOfTheOrganization">
+               <h:outputText value="#{organization.nameOfTheOrganization}"/>
+            </p:column>
+            <p:column headerText="fullnameOfTheHead">
+               <h:outputText value="#{organization.fullnameOfTheHead}"/>
+            </p:column>
+            <p:column headerText="fax">
+               <h:outputText value="#{organization.fax}"/>
+            </p:column>
+            <p:column headerText="phone">
+               <h:outputText value="#{organization.phone}"/>
+            </p:column>
+            <p:column headerText="webpage">
+               <h:outputText value="#{organization.webpage}"/>
+            </p:column>
+            <p:column headerText="licenseNumber">
+               <h:outputText value="#{organization.licenseNumber}"/>
+            </p:column>
+            <p:column headerText="dateOfObtainingTheLicense">
+               <h:outputText value="#{organization.dateOfObtainingTheLicense}"/>
+            </p:column>
+            <p:column headerText="certificateNumber">
+               <h:outputText value="#{organization.certificateNumber}"/>
+            </p:column>
+            <p:column headerText="dateOfReceiptOfTheCertificate">
+               <h:outputText value="#{organization.dateOfReceiptOfTheCertificate}"/>
+            </p:column>
+            <p:column headerText="address">
+               <h:outputText value="#{organization.address}"/>
+            </p:column>
+            <p:column headerText="filesToAttach">
+               <h:outputText value="#{organization.filesToAttach}"/>
+            </p:column>
+
+            <p:column>
+               <p:commandButton update="home" value="Delete" icon="ui-icon-closethick"
+                                action="#{organizationController.delete(organization)}" styleClass="ui-priority-primary">
+               </p:commandButton>
+            </p:column>
+
+            <p:column>
+               <h:commandLink id="Add" value="Add" action="add-organization"
+                              styleClass="ui-priority-primary"/>
+            </p:column>
+
+            <p:column>
+               <h:commandLink id="Update" value="Update" action="add-organization"
+                              styleClass="ui-priority-primary"/>
+            </p:column>
+
+         </p:dataTable>
+      </h:form>
+   </h:body>
+</html>

@@ -3,20 +3,23 @@ package com.example.infocom.controller;
 import com.example.infocom.entity.Employee;
 import com.example.infocom.model.EmployeeModel;
 
-import javax.annotation.PostConstruct;;
+import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Named
 @ViewScoped
-public class EmployeeController {
-    private List<Employee> employees;
+public class EmployeeController implements Serializable {
+
+    private List<Employee> employees = new ArrayList<>();
     private Employee employee = new Employee();
 
     @Inject
-    private EmployeeModel employeeModel;
+    transient private EmployeeModel employeeModel;
 
     @PostConstruct
     public void getAll(){
@@ -34,12 +37,24 @@ public class EmployeeController {
         employee = new Employee();
     }
 
-    public void update(){
-        employeeModel.update(employees);
+    public String add(Employee employee){
+        this.employee = employee;
+        return "add";
     }
 
+//    public void update(){
+//        employeeModel.update(employees);
+//    }
 
+    public String update(Employee employee){
+       this.employee = employee;
+       return "update";
+    }
 
+    public void update(){
+        employeeModel.updateById(employee.getId(),employee.getFullName(), employee.getHomePhone(), employee.getPhone()
+        ,employee.getHomeAddress(),employee.getEmail(),employee.getBankDetails(),employee.getPosition(),employee.getWorkPhone());
+    }
 
     public List<Employee> getEmployees() {
         return employees;

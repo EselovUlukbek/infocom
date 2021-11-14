@@ -1,10 +1,12 @@
 package com.example.infocom.entity;
 
 import javax.persistence.*;
+import java.io.Serializable;
+
 
 @Entity
-@Table(name = "Employee")
-public class Employee {
+@Table
+public class Employee implements Serializable {
 
     private long id;
     private String fullName;
@@ -18,7 +20,7 @@ public class Employee {
 
     @Id
     @Basic
-    @Column(name = "id")
+    @Column(name = "id", nullable = false)
     public long getId() {
         return id;
     }
@@ -28,7 +30,7 @@ public class Employee {
     }
 
     @Basic
-    @Column(name = "full_name")
+    @Column(name = "full_name", nullable = false)
     public String getFullName() {
         return fullName;
     }
@@ -38,7 +40,7 @@ public class Employee {
     }
 
     @Basic
-    @Column(name = "home_phone")
+    @Column(name = "home_phone", nullable = false)
     public String getHomePhone() {
         return homePhone;
     }
@@ -48,7 +50,7 @@ public class Employee {
     }
 
     @Basic
-    @Column(name = "phone")
+    @Column(name = "phone", nullable = false)
     public String getPhone() {
         return phone;
     }
@@ -58,7 +60,7 @@ public class Employee {
     }
 
     @Basic
-    @Column(name = "home_address")
+    @Column(name = "home_address", nullable = false)
     public String getHomeAddress() {
         return homeAddress;
     }
@@ -68,7 +70,7 @@ public class Employee {
     }
 
     @Basic
-    @Column(name = "email")
+    @Column(name = "email", nullable = false)
     public String getEmail() {
         return email;
     }
@@ -78,7 +80,7 @@ public class Employee {
     }
 
     @Basic
-    @Column(name = "bank_details")
+    @Column(name = "bank_details", nullable = false)
     public long getBankDetails() {
         return bankDetails;
     }
@@ -88,7 +90,7 @@ public class Employee {
     }
 
     @Basic
-    @Column(name = "position")
+    @Column(name = "position", nullable = false)
     public String getPosition() {
         return position;
     }
@@ -98,7 +100,7 @@ public class Employee {
     }
 
     @Basic
-    @Column(name = "work_phone")
+    @Column(name = "work_phone", nullable = false)
     public String getWorkPhone() {
         return workPhone;
     }

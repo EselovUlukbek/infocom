@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+   <h:head>
+   </h:head>
+
+   <h:body>
+      <h:form id="employees">
+         <p:dataTable id="emplo" var="employee" value="#{employeeController.employees}">
+            <p:column headerText="id">
+               <h:outputText  value="#{employee.id}"/>
+            </p:column>
+            <p:column headerText="fullName">
+               <h:outputText value="#{employee.fullName}"/>
+            </p:column>
+            <p:column headerText="homePhone">
+               <h:outputText value="#{employee.homePhone}"/>
+            </p:column>
+            <p:column headerText="phone">
+               <h:outputText value="#{employee.phone}"/>
+            </p:column>
+            <p:column headerText="workPhone">
+               <h:outputText value="#{employee.workPhone}"/>
+            </p:column>
+            <p:column headerText="homeAddress">
+               <h:outputText value="#{employee.homeAddress}"/>
+            </p:column>
+            <p:column headerText="email">
+               <h:outputText value="#{employee.email}"/>
+            </p:column>
+            <p:column headerText="bankDetails">
+               <h:outputText value="#{employee.bankDetails}"/>
+            </p:column>
+            <p:column headerText="position">
+               <h:outputText value="#{employee.position}"/>
+            </p:column>
+
+            <p:column>
+               <p:commandButton update="emplo" value="Delete" icon="ui-icon-closethick"
+                                action="#{employeeController.delete(employee)}" styleClass="ui-priority-primary">
+               </p:commandButton>
+            </p:column>
+
+<!--            <p:column>-->
+<!--               <h:commandLink id="Update" value="Update" action="update"-->
+<!--                              styleClass="ui-priority-primary"/>-->
+<!--            </p:column>-->
+            <p:column>
+               <h:commandLink id="Add" value="Add" action="#{employeeController.add(employee)}"
+               styleClass="ui-priority-primary"/>
+            </p:column>
+
+            <p:column>
+               <h:commandLink id="Update" value="Update" action="#{employeeController.update(employee)}"
+                              styleClass="ui-priority-primary"/>
+            </p:column>
+
+         </p:dataTable>
+      </h:form>
+   </h:body>
+</html>
